@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="view_order_form_inherit_harm_sale" model="ir.ui.view">
+            <field name="name">view.sale.order.form.inherit.harm_sale</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form" />
+            <field name="arch" type="xml">  
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="loose_sale" invisible="1"/>
+                    <field name="scale_no"/>
+                    <field name="moisture"/>
+                    <field name="truck_no"/>
+                </xpath>
+                <xpath expr="//field[@name='payment_term_id']" position="after">
+                    <field name="truck_driver"/>
+                    <field name="driver_mobile" widget="phone"/>
+                    <field name="loose_sale"/>
+                    <field name="harm_date"/>
+                    <field name="harm_reference"/>
+                </xpath>
+                <xpath expr="//field[@name='tax_id']" position="replace">
+                    <field name="loose_sale" invisible="1"/>
+                    <field name="moisture"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="om_hospital.report_patient_detail">
+        <t t-call="web.html_container">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.internal_layout">
+                        <div class="page">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                        </td>
+                                        <td style="vertical-align: top;">
+
+<!--                                            <p style="text-align:center;padding-top:10px">-->
+<!--                                                <img t-if="not o.img"-->
+<!--                                                     t-att-src="'web/static/src/img/placeholder.png'" height="140"-->
+<!--                                                     border="1" width="120"/>-->
+<!--                                                <img t-if="o.image"-->
+<!--                                                     t-att-src="'data:image/png;base64, %s' % to_text(o.img)" height="140" border="1" width="120"/>-->
+<!--                                            </p>-->
+                                            <div
+                                                    style="margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px; font-size:16px">
+                                                <b>
+                                                    Patient ID:
+                                                    <span t-field='o.name'/>
+                                                </b>
+                                                <b>Name:</b>
+                                                <span t-field='o.doctor_id'/>
+                                                <br></br>
+                                                <b>Gender :</b>
+                                                <span t-field='o.gender'/>
+                                                <br></br>
+                                                <b>State:</b>
+                                                <span t-field='o.state'/>
+                                                <br></br>
+                                                <b>Age:</b>
+                                                <span t-field='o.age'/>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
+
+
+        <!--		<template id="report_patient_card">-->
+        <!--			<t t-call="web.html_container">-->
+        <!--				<t t-foreach="docs" t-as="o">-->
+        <!--					<t t-call="basic_hms.report_patient_card_document"-->
+        <!--						t-lang="o.patient_id.lang" />-->
+        <!--				</t>-->
+        <!--			</t>-->
+        <!--		</template>-->

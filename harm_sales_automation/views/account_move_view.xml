@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="account_move_form_inherit" model="ir.ui.view">
+        <field name="name">account.move.inherited</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <button name="button_draft" position="after">
+<!--                <button name="register" string="Register Cash Payment" type="action"/>-->
+                <button name="action_cash_payment"
+                        type="object" class="oe_highlight"
+                        string="Register Cash Payment"
+                />
+            </button>
+
+        </field>
+    </record>
+</odoo>
